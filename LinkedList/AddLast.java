@@ -1,4 +1,4 @@
-package LinkedList;
+// package practice;
 
 public class AddLast {
     public class Node{
