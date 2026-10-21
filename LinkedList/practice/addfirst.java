@@ -20,8 +20,6 @@ public void AddFirst(int data) {
         return ;
     }
     newNode.next=head;
-
-
     }
 public static void main(String[] args) {
     addfirst ll=new addfirst();
