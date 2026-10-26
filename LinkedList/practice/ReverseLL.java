@@ -24,21 +24,19 @@ public class ReverseLL {
         head = newNode;
     }
 
-public void reverse(){
-Node prev=null;
-Node curr=head;
-tail=head;
-Node next;
-while (curr!=null) {
-    next=curr.next;
-    curr.next=prev; /* yahan maine cuurnt ke next ko previos se jod diya hai */
-  prev=curr; /*yaha maine crruent ko previous bana diya hai */
-    curr=next; /*phir main agle node par chala gya */
-    
-}
-
-    head = prev;
-}
+    public void reverse() {
+        Node prev = null;
+        Node curr = head;
+        tail = head;
+        Node next;
+        while (curr != null) {
+            next = curr.next;
+            curr.next = prev; /* yahan maine cuurnt ke next ko previos se jod diya hai */
+            prev = curr; /* yaha maine crruent ko previous bana diya hai */
+            curr = next; /* phir main agle node par chala gya */
+        }
+        head = prev; /* prev reverse hui list ke naye first node ko point karta hai */
+    }
 
     public void show() {
         Node temp = head;
@@ -63,7 +61,6 @@ while (curr!=null) {
         ll.show();
         ll.reverse();
         ll.show();
-     
     }
 
 }
