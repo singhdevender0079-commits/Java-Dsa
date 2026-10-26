@@ -1,4 +1,4 @@
-package LinkedList/practice;
+package LinkedList;
 
 public class Recursivesearch {
    public class Node{
