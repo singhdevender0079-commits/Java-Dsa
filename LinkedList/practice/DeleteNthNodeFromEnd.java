@@ -1,77 +1,94 @@
-package LinkedList;
+package LinkedList.practice;
 
 public class DeleteNthNodeFromEnd {
-    public  class  Node {
-    int data;
-    Node next;
-   public Node(int data){
+   public class Node {
+int data;
+Node next;
+public  Node(int data){
 this.data=data;
 this.next=null;
-        }
-    }
-
+}
+}
 public static Node head;
-public static Node tail;
+public  static  Node tail;
 
-public  void addData(int data){
+public void addFirst(int data){
 Node newNode=new Node(data);
 if(head==null){
 head=tail=newNode;
-return;
+return ;
 }
 newNode.next=head;
 head=newNode;
 }
 
-public void deleteNth(int n){
-Node temp=head;
-int size=0;
-while (temp != null) {
-    temp=temp.next;
-    size++;
-}
-if(size==n){
-head=head.next;
-return ;
-}
-int i=1;
-int itodata=size-n;
-Node prev=head;
-while (i<itodata) {
-    prev=prev.next;
-    i++;
-}
-prev.next=prev.next.next;
-return ;
-
-}
-
-
-
-public void show(){
-    Node temp=head;
-    while (temp != null) {
-        System.out.print(temp.data+ " => ");
-temp=temp.next;
+public void DelteNode(int index){
+    if(head==null){
+        System.out.println("Linked list is empty");
     }
-    System.out.println(" ");
-};
+    Node temp=head;
+    if(index==0){
+      head=head.next;
+return ;
+    }
 
-public static void main(String[] args) {
-    DeleteNthNodeFromEnd ll=new DeleteNthNodeFromEnd();
-        ll.addData(5);
-ll.show();
-            ll.addData(4);
-            ll.show();
-    ll.addData(3);
-    ll.show();
-    ll.addData(2);
-    ll.show();
-    ll.addData(1);
-ll.show();
-ll.deleteNth(2);
-ll.show();
-
+for(int i=1;  i<=index-1;i++){
+    temp=temp.next;
+      
+}
+ if (temp.next == tail) {
+            tail = temp;
+        }
+temp.next=temp.next.next;
 }
 
+public void DelFromEnd(int idx){
+    int size=0;
+    Node temp=head;
+    while (temp!=null) {
+    size++;
+    temp=temp.next;
+    }
+    if(idx==size){
+        head=head.next;
+    }
+    Node datadel=head;
+    int curr=(size-idx)+1;
+for(int i=1;i<curr-1;i++){
+datadel=datadel.next;
+}
+ if (datadel.next == tail) {
+        tail = datadel;
+    }
+datadel.next=datadel.next.next;
+}
+
+
+
+
+public void  show(){
+Node temp =head;
+while (temp!=null) {
+     if(head==null){
+        System.out.println("LinkedList is empty");
+        return ;
+    }
+    System.out.print(temp.data + " => ");
+    temp=temp.next;
+}
+System.out.println(" ");
+}
+public static void main(String[] args) {
+    DeleteNthNodeFromEnd ll= new DeleteNthNodeFromEnd();
+ll.addFirst(3);
+ll.show();
+ll.addFirst(2);
+ll.show();
+ll.addFirst(1);
+ll.show();
+ll.DelteNode(1);
+ll.show();
+ll.DelFromEnd(1);
+ll.show();
+}
 }
