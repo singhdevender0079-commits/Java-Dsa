@@ -9,10 +9,8 @@ this.data=data;
 this.next=null;
         }
     }
-
 public static Node head;
 public static Node tail;
-
 public  void addData(int data){
 Node newNode=new Node(data);
 if(head==null){
@@ -22,7 +20,6 @@ return;
 newNode.next=head;
 head=newNode;
 }
-
 public void deleteNth(int n){
 Node temp=head;
 int size=0;
@@ -45,9 +42,6 @@ prev.next=prev.next.next;
 return ;
 
 }
-
-
-
 public void show(){
     Node temp=head;
     while (temp != null) {

@@ -63,9 +63,6 @@ datadel=datadel.next;
 datadel.next=datadel.next.next;
 }
 
-
-
-
 public void  show(){
 Node temp =head;
 while (temp!=null) {
