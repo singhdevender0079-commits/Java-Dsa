@@ -1,6 +1,6 @@
 package LinkedList.practice;
 
-public class DeleteNthNodeFromStart {
+public class delteMidNode {
    public class Node {
 int data;
 Node next;
@@ -55,7 +55,7 @@ while (temp!=null) {
 System.out.println(" ");
 }
 public static void main(String[] args) {
-    DeleteNthNodeFromStart ll= new DeleteNthNodeFromStart();
+   delteMidNode  ll= new delteMidNode();
 ll.addFirst(3);
 ll.show();
 ll.addFirst(2);
